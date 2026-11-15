@@ -36,6 +36,21 @@ b. Изпраща сигналите с най-висок риск с най-в�
 c. Предлага автоматични маршрути за обход и проверка
 d. Обучава се от реални събития и сезони, за да подобрява точността си
 
-----
 
-For the authentication, I suggest that we work with a 
+Примерен поток от данни при 10к сензори:
+
+| Period | Requests |
+|---|---:|
+| 1 second, average | **333.33** |
+| 30 seconds | 10,000 |
+| 1 minute | 20,000 |
+| 1 hour | 1,200,000 |
+| 1 day | 28,800,000 |
+| 30 days | **864,000,000** |
+| 1 year, 365 days | **10,512,000,000** |
+
+| Payload per request | Average incoming bandwidth | Per day | Per 30 days |
+|---|---:|---:|---:|
+| 500 bytes | 0.167 MB/s ≈ 1.33 Mbps | 14.4 GB | 432 GB |
+| 1 KB | 0.333 MB/s ≈ 2.67 Mbps | 28.8 GB | 864 GB |
+| 5 KB | 1.67 MB/s ≈ 13.33 Mbps | 144 GB | 4.32 TB |
