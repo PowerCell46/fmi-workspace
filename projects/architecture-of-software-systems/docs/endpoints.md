@@ -15,7 +15,7 @@ request format:
 
 The server should receive this payload and create a new Sensor instance and persist it. There should be a calculation of the following:
 // TODO: The idea is that when a init request is made, the server calculates where it should distribute the
-// sensor in order for them to be evenly spread out in terms of exact second of a minute when a request is made to the system
+// sensor in order for them to be evenly spread out in terms of exact second of a minute when a request is made to the system (Jitter)
 response format:
 ```json
 {
@@ -24,8 +24,11 @@ response format:
 ```
 
 ---
-### Endpoint for a sensor to submit its report data
+### Endpoint for a sensor to submit its report data:
 Based on the persisted values reportedAtSecond and id the sensor sends its latest data
+
+POST request
+request format:
 ```json
 {
     id: "UUID",
@@ -60,7 +63,7 @@ response format:
 TODO: We should discuss how the authentication works
 
 ---
-### Endpoint for logging into the system
+### Endpoint for logging into the system:
 The session of the user has timed out and he has to log in once again (or has logged out, if we add such functionality)
 
 POST request
@@ -77,3 +80,34 @@ We should validate the data and check whether the credentials are correct. If th
 response format:
 TODO: See Register
 
+---
+### Endpoint where an admin can alter the role of the users
+It's important to discuss here whether the relationship is ManytoOne between User and Role or Many to many
+
+```json
+{
+    username: "String", // or id
+    role: "Role"
+}
+```
+
+response format:
+either successful operation or not (failure)
+
+---
+### Endpoint where a registered user files a report
+подават сигнали за проблеми, които се включват в приоритизацията на обработка от операторите по поддръжка
+
+POST request
+```json
+{
+    latitude: "BigDecimal",
+    longitude: "BigDecimal",
+    filedAt: "String", // new Date().toISOString() or however it was in JS
+    problemType: "", // TODO: 1. Should it be enum or free text; 2. We should rename the field for sure
+    image: "String" // TODO: We should discuss how the image is being sent
+}
+
+The server receives the request, validates the data, persist the image in the object storage and then persists the entry in the database
+
+---
