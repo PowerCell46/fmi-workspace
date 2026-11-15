@@ -1,0 +1,7 @@
+### Questions for the lecturer:
+
+1. Роля AI Модул (виртуален асистент за анализ и предложения): Kakwo se има предвид под това да имаме user role за AI module?
+
+2. "Регистрирани граждани могат да подават сигнали за проблеми" -> това означава ли че само граждани могат да подават сигнали за проблеми
+
+3. Да се осигури публичен API за използване на данните от трети страни, даващи следната информация -> are the endpoints authenticated or not? Should unauthorized users be able to access them or not?
