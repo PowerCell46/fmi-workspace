@@ -96,3 +96,27 @@ enum FiledProblemStatus {
     // TODO: Think of the statuses
 }
 ```
+
+---
+### FiledProblemType enumeration
+
+```java
+enum FiledProblemType {
+
+    SURFACE_DAMAGE,
+
+    SLIPPERY_SURFACE,
+
+    FLOODED_SURFACE,
+
+    OBSTRUCTION,
+
+    DRAINAGE_ISSUE,
+
+    DAMAGED_INFRASTRUCTURE,
+
+    ACCESSIBILITY,
+
+    OTHER
+}
+```
