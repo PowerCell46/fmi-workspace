@@ -69,7 +69,7 @@ Probably we should return the JWT token in a cookie or some error.
 
 ---
 ### Endpoint for logging into the system:
-The session of the user has timed out and he has to log in once again (or has logged out, if we add such functionality)
+The session of the user has timed out and he has to log in once again or has logged out
 
 POST request
 request format:
@@ -84,6 +84,16 @@ We should validate the data and check whether the credentials are correct. If th
 
 response format:
 Same as register basically
+
+---
+### Endpoint for logging out of the system:
+The user wants to sign out of his account
+
+POST request (or DELETE)
+no request body
+
+response format:
+either success or failure
 
 ---
 ### Endpoint where an admin can alter the role of the users

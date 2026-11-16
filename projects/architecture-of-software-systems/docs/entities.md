@@ -77,7 +77,7 @@ class FiledProblem {
 
     private BigDecimal longitude;    
 
-    private FiledProblemType | String problemType; // TODO: We should discuss if it should be enum or free text, maybe a dropdown of enums is the best option
+    private FiledProblemType problemType;
 
     private String imageUrl; // The idea is that the image is stored in an object storage, we don't persist it on the file system or in the database
 
