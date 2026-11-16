@@ -5,7 +5,7 @@ POST request
 request format:
 ```json
 {
-    authenticationKey: "String", // TODO: This should be renamed
+    internalSecretKey: "String", // TODO: We could name this better
     
     latitude: "BigDecimal",
     
@@ -91,7 +91,7 @@ It's important to discuss here whether the relationship is ManytoOne between Use
 
 ```json
 {
-    username: "String", // or id
+    id: "String",
     role: "Role"
 }
 ```
@@ -108,8 +108,8 @@ POST request
 {
     latitude: "BigDecimal",
     longitude: "BigDecimal",
-    filedAt: "String", // new Date().toISOString() or however it was in JS
-    problemType: "", // TODO: 1. Should it be enum or free text; 2. We should rename the field for sure
+    filedAt: "Date",
+    problemType: "Enum",
     image: "String" // TODO: We should discuss how the image is being sent
 }
 
