@@ -19,7 +19,7 @@ enum Role {
 
     CITIZEN, // (registered user)
  
-    SUPPORT_OPERATOR,
+    SUPPORT_OPERATOR, // (служител или външен партньор, отговарящ за инфраструктурата)
  
     DATA_ANALYZER,
  
@@ -59,7 +59,7 @@ class Sensor {
     
     private BigDecimal longitude;
 
-    private Integer reportAtSecond; // value from 0 to 59 indicating on which second the sensor should send its report
+    private Integer reportAtSecond; // value from 0 to 29 indicating on which second the sensor should send its report; the name should be changed
 }
 ```
 
@@ -77,7 +77,7 @@ class FiledProblem {
 
     private BigDecimal longitude;    
 
-    private FiledProblemType | String problemType; // TODO: We should discuss if it should be enum or free text
+    private FiledProblemType | String problemType; // TODO: We should discuss if it should be enum or free text, maybe a dropdown of enums is the best option
 
     private String imageUrl; // The idea is that the image is stored in an object storage, we don't persist it on the file system or in the database
 
