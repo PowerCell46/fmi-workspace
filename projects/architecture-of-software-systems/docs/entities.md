@@ -23,9 +23,7 @@ enum Role {
  
     DATA_ANALYZER,
  
-    ADMINISTRATOR, // admin
- 
-    //! AI_MODULE (виртуален асистент за анализ и предложения)????
+    ADMINISTRATOR // admin
 }
 ```
 
