@@ -130,9 +130,9 @@ GET request
 
 ---
 ### Endpoint for fetching the privacy notice
-In order to comply with the GDPR rules we should have the following: "a short page saying what you store, why, and for how long."
-This endpoint should be the source of that. If a change is made to how we store data, FE should be decoupled from the BA. It could be a static
-HTML or txt file we read and send out.
+In order to comply with the GDPR rules we should have the following: **"a short page saying what you store, why, and for how long."**
+This endpoint should be the source of that. If a change is made on how we store data, FE should be decoupled from the BA's structure. It could be a static
+HTML or txt file we read & send out, update the file when we have to.
 
 GET request
 

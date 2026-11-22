@@ -21,5 +21,23 @@
     - Maybe that means that we should have an endpoint where a user can delete his account (we need to think what happens to other entities referencing the user)
 
 ---
-- Преглеждане и избиране на тема по Обектно ориентиран анализ и моделиране
-    Virtual Stock Market
+GDPR related: 
+    Retention: don't keep logs and inactive accounts forever.
+
+    use HTTPS
+
+    removing the user related data from logs (for example when creating a FiledProblem, don't log the username; only log username on register, don't log it on login and logout, because it will create problems when we have to delete the logs)
+    
+    if you use third-party hosting or email, check that they have a DPA (Data Processing Agreement)
+    
+    put an email in the privacy notice where users can send requests.
+
+    Endpoint related:
+        Decide and note why you process the data. 
+            For a login system it's usually "contract" (providing the service). 
+            If you add anything optional (analytics, marketing emails), that needs consent.
+        know who decides and how you'd notify users and the authority (72 hours) if something leaks. A few lines in a doc is enough.
+        keep a short note of what data you store, where, and why. It also makes the privacy notice easy to write.
+
+Може архивната ни база да е DataWarehouse (различна от работещата), което ще е доста подходящо за аналитичната функционалност 
+    (трябва да се види дали може да се трие от нея и да се правят промени за GDPR related stuff)
