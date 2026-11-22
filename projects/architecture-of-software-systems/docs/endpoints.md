@@ -135,6 +135,7 @@ This endpoint should be the source of that. If a change is made on how we store 
 HTML or txt file we read & send out, update the file when we have to.
 
 GET request
+could be accessed without authentication/freely accessed
 
 ---
 ### Endpoint where a registered user files a report

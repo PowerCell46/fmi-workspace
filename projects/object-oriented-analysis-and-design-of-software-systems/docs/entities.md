@@ -1,28 +1,34 @@
 ### User entity
 
 ```java
-class UserProfile {
+class User {
 
-    private UUID id,
+    private UUID id;
 
-	private String name,
+	private String name;
 
-    private String password,
+    private String password;
 
-	private Wallet wallet,
-
-	private List<Transaction> transactions
+	private Wallet wallet;
 }
 ```
 
-### Wallet
+### Portfolio
 
 ```java
-class Wallet {
+class Portfolio {
 
     private UUID id,
 
-	private BigDecimal balance
+	private List<Transaction> transactions;
+
+	private List<CurrencyAmount> currencyAmount;
+
+	private Currency defaultCurrency; // EUR
+
+	private List<Dividend> paidDividends; // ! При получаване на дивидент, трябва да се инкрементира подходящия currencyAmount
+
+	// transient totalAmount
 }
 ```
 
@@ -33,15 +39,31 @@ class Transaction: { // заявка за закупуване/продаван�
 
 	private UUID id,
 
-	private string asset,
+	private Instant at;
 
- 	private BigDecimal buy, // да се види механизма
+	private Comapny asset,
 
-	private BigDecimal sell,
+	private BigDecimal amount;
 
-	private Currency currencyId
+	private OperationType operationType;
+
+	private Currency currencyId;
+
+	private BigDecimal priceAt;
 }
 ```
+
+---
+## OperationType
+
+```java
+enum OperationType {
+	BUY,
+	SELL
+}
+```
+
+---
 
 ### Currency
 
@@ -53,3 +75,43 @@ class Currency: {
     private String displayName
 }
 ```
+
+## CurrencyAmount
+```java
+class CurrencyAmount {
+
+	private Portfolio portfolio;
+
+	private Currency currency;
+	
+	private BigDecimal amount;
+}
+```
+
+---
+## Divident
+```java
+class Divident { // Occurrence
+
+	private Portfolio portfolio;
+
+	private Company company;
+
+	private BigDecimal amountOfShared; // 2,14
+
+	private Currency currency;
+
+	private Instant paidAt;
+
+	private BigDecimal paidAmount;
+}
+```
+
+---
+## Company 
+
+```java
+class Company {
+
+	// TODO: Add the fields
+}

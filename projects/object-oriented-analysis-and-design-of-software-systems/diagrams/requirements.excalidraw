@@ -1046,6 +1046,178 @@
       "pressures": [],
       "simulatePressure": true,
       "lastCommittedPoint": null
+    },
+    {
+      "id": "8c2zsoonqsTHtZLsi96xI",
+      "type": "line",
+      "x": 789.2427314570757,
+      "y": 344.6633429254058,
+      "width": 77.02998511406963,
+      "height": 2.441593785697137,
+      "angle": 0,
+      "strokeColor": "#f08c00",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aV",
+      "roundness": {
+        "type": 2
+      },
+      "seed": 2088281179,
+      "version": 183,
+      "versionNonce": 1084183413,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1795340095975,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          77.02998511406963,
+          -2.441593785697137
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null
+    },
+    {
+      "id": "lsa1zDRUSNxtLd385WYL5",
+      "type": "line",
+      "x": 345.4243803820426,
+      "y": 359.3201650859285,
+      "width": 490.99991265434153,
+      "height": 1.0163224876043273,
+      "angle": 0,
+      "strokeColor": "#f08c00",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aW",
+      "roundness": {
+        "type": 2
+      },
+      "seed": 816782549,
+      "version": 91,
+      "versionNonce": 760872981,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1795340102962,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          490.99991265434153,
+          1.0163224876043273
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null
+    },
+    {
+      "id": "oUSPbPi9cC64lwQjyjEIh",
+      "type": "line",
+      "x": 347.52961982065165,
+      "y": 372.7017445060525,
+      "width": 423.3515520270388,
+      "height": 1.8342201085811212,
+      "angle": 0,
+      "strokeColor": "#f08c00",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aY",
+      "roundness": {
+        "type": 2
+      },
+      "seed": 690766555,
+      "version": 212,
+      "versionNonce": 911416763,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1795340115669,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          423.3515520270388,
+          1.8342201085811212
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null
+    },
+    {
+      "id": "0_sTCm6M3KUWVXq6w6nBN",
+      "type": "text",
+      "x": 888.4515342421016,
+      "y": 323.12699990341775,
+      "width": 178.25996314341023,
+      "height": 114.11569238768953,
+      "angle": 0,
+      "strokeColor": "#f08c00",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aZ",
+      "roundness": null,
+      "seed": 188591707,
+      "version": 513,
+      "versionNonce": 815922491,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1795340405952,
+      "link": null,
+      "locked": false,
+      "text": "sounds like we need to\nfetch the data via a\nWebSocket?\n\nThe question is whether there's\nany point in persisting all price \nchanges? I don't think there's\nany point, no value in doing it.",
+      "fontSize": 11.411569238768951,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "sounds like we need to\nfetch the data via a\nWebSocket?\n\nThe question is whether there's\nany point in persisting all price \nchanges? I don't think there's\nany point, no value in doing it.",
+      "autoResize": true,
+      "lineHeight": 1.25
     }
   ],
   "appState": {

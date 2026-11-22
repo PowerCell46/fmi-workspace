@@ -121,6 +121,7 @@ enum FiledProblemType {
 
 ---
 ### AI assesment
+Wrap-ваме FiledProblem и му добавяме приоритет, резултат от Priorization assesment service-a.
 
 ```java
 class FiledProblemAssesment {
@@ -141,7 +142,7 @@ class FiledProblemAssesment {
 
 ```java
 enum Priority  {
-    
+
     LOW,
 
     MEDIUM,

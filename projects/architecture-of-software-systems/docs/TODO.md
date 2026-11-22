@@ -40,4 +40,6 @@ GDPR related:
         keep a short note of what data you store, where, and why. It also makes the privacy notice easy to write.
 
 Може архивната ни база да е DataWarehouse (различна от работещата), което ще е доста подходящо за аналитичната функционалност 
-    (трябва да се види дали може да се трие от нея и да се правят промени за GDPR related stuff)
+    (трябва да се види дали може да се трие от нея и да се правят промени за GDPR related stuff) - как се случват read операциите?
+
+Can rabbit MQ have more than one consumers per topic/partition? - can the same message be consumed by more than 1 consumers
