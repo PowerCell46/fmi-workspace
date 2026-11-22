@@ -28,7 +28,7 @@ class UserDetails {
 
 	private String socialSecurityNumber;
 
-	private String gender; // or boolean or enum
+	private Gender gender;
 
 	private String nationality; // or enum
 
@@ -48,7 +48,20 @@ class UserDetails {
 
 	private LocalDate dateOfIssue;
 
-	// private List<String> imageUrls; // taken images of the document
+	private List<String> personalDocumentImageUrls; // 2 pictures - from the two sides of the document
+}
+```
+
+---
+## Gender
+```java
+enum Gender {
+
+	MALE,
+
+	FEMALE,
+
+	OTHER
 }
 ```
 
@@ -68,7 +81,14 @@ class Portfolio {
 
 	private List<Dividend> paidDividends; // ! При получаване на дивидент, трябва да се инкрементира подходящия currencyAmount
 
-	// transient totalAmount: calculated by iterating through all currencyAmounts + converted to defaultCurrency
+	public BigDecimal getTotalAmount() {
+		return currencyAmounts
+			.stream()
+			.map(currencyAmount -> {
+				// TODO: you get the currencyAmount.getAmount(), convert it to the defaultCurrency (by the current ratio) and return the value
+			})
+			.sum(); // not sure if we had such operation in Java
+	}
 }
 ```
 
@@ -76,7 +96,7 @@ class Portfolio {
 ### Transaction
 
 ```java
-class Transaction: { // заявка за закупуване/продаване
+class Transaction { // заявка за закупуване/продаване
 
 	private UUID id;
 
@@ -99,7 +119,9 @@ class Transaction: { // заявка за закупуване/продаван�
 
 ```java
 enum OperationType {
+
 	BUY,
+
 	SELL
 }
 ```
@@ -108,7 +130,7 @@ enum OperationType {
 ### Currency
 
 ```java
-class Currency: {
+class Currency {
 
 	private int id;
 
@@ -158,6 +180,8 @@ class Company {
 
 	private String ticker;
 
+	private String industry; // could be an enum as well
+
 	// private String imageUrl;
 
 	// private String name;
@@ -168,3 +192,36 @@ class Company {
 
 	private BigDecimal dividendYield;
 }
+```
+
+---
+## TranslationField
+
+```java
+class TranslationField {
+
+	private Language language;
+
+	private String tableName;
+
+	private String fieldName;
+
+	private String value;
+}
+
+// | EN | Company | name        | Meta                                                             |
+// | EN | Company | description | Meta Platforms, Inc., headquartered in Menlo Park, California... |
+// | BG | Company | name        | Meta                                                             |
+// | BG | Company | description | Meta Platforms, Inc., със седалище в Менло Парк, Калифорния...   |
+
+```
+
+---
+## Language
+
+```java
+class Language {
+
+	private String name;
+}
+```
