@@ -61,7 +61,7 @@ request format:
 }
 ```
 
-We should make sure the username is not taken and that the username and password are valid, according to our validations. Password needs to be encrypted.
+We should make sure the username is not taken and that the username and password are valid, according to our validations. Password needs to be hashed (bcrypt/argon2).
 
 response format:
 TODO: We should discuss how the authentication works
@@ -99,6 +99,7 @@ either success or failure
 ### Endpoint where an admin can alter the role of the users
 It's important to discuss here whether the relationship is ManytoOne between User and Role or Many to many
 
+PATCH request
 ```json
 {
     id: "String",
@@ -108,6 +109,32 @@ It's important to discuss here whether the relationship is ManytoOne between Use
 
 response format:
 either successful operation or not (error)
+
+---
+### Endpoint where we allow a user to delete their account
+In the UI we should have some option where the user could delete his account. In order to do it, he/she has to click confirm at least once
++ write down the username exactly matching. If that's the case we make a request to this endpoint
+
+DELETE request
+
+the system hard deletes the user from the database, we should also make sure that their data is deleted from the archive/backup. All relational entities
+should set their user_id to NULL.
+IMPORTANT: **Erasure also means the data has to go from everywhere: DB, logs, search indexes, and backups on a retention schedule.**
+
+---
+### Endpoint where we allow a user to export their data
+In the same place in the UI as the delete account, we should allow the option to the user to export their data in a structured way (JSON for example);
+All user related data + related entity entries (FiledProblem).
+
+GET request
+
+---
+### Endpoint for fetching the privacy notice
+In order to comply with the GDPR rules we should have the following: "a short page saying what you store, why, and for how long."
+This endpoint should be the source of that. If a change is made to how we store data, FE should be decoupled from the BA. It could be a static
+HTML or txt file we read and send out.
+
+GET request
 
 ---
 ### Endpoint where a registered user files a report
