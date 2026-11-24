@@ -22,6 +22,9 @@ d. Обучава се от реални събития и сезони, за д
 Ако имаме 20 000 заявки от сензор за минута и ги изпращаме с batch до TimescaleDB (multi-row inserts)
 ще имаме партиди (bathes) от по 100 правейки 200 транзакции, вместо 20 000 до базата.
 
+Използва се outbox pattern, който позволява успешно да се записва в базата, както и паралелно да се
+изпрати event до message queue.
+
 ----
 **Данни**
 
@@ -58,13 +61,37 @@ d. Обучава се от реални събития и сезони, за д
 
 При training: модула черпи данни от сензорите, които ще ползва за трениране и обновяване на интерактивната карта.
 
+AI service консумира от message queue events и рутира към определения модел:
+- route
+- incident (problem)
+
 ----
 **Бази данни и поток**
 // todo: да се разпише цялостния поток от данни;
 
-Message broker ще стои между:
+Message broker ще стои между (Kafka):
 
 - Sensor service <-> обучението на ИИ модула
+- Sensor service <-> Map service
 - Filed problems service <-> приоритизацията от ИИ модула
 
 Ще позволява отделянето на модулите с ниско ниво на свързване и асинхронна обработка.
+
+SensorService TimescaleDB tables:  
+├── sensor  
+├── sensor_measurements  
+├── sensor_latest_state  
+├── outbox_events  
+└── sensor_hourly_aggregates  
+
+Event, който message broker-а получава ще бъде референция към един batch, който после може да
+бъде селектиран от базата данни (TimescaleDB), например:
+```json
+{
+  "eventId": "uuid-456",
+  "eventType": "SensorBatchPersisted",
+  "batchId": "batch-789",
+  "measurementsCount": 500,
+  "persistedAt": "2026-11-23T19:00:00Z"
+}
+```
