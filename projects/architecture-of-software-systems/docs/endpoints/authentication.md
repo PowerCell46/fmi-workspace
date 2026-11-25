@@ -1,5 +1,3 @@
-
----
 ### Endpoint for registering a user:
 A new user wants to join our system.
 

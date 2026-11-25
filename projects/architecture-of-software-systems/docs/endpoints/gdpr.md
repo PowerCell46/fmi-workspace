@@ -1,5 +1,3 @@
-
----
 ### Endpoint where we allow a user to delete their account
 In the UI we should have some option where the user could delete his account. In order to do it, he/she has to click confirm at least once
 + write down the username exactly matching. If that's the case we make a request to this endpoint
@@ -41,5 +39,3 @@ POST request
 }
 
 The server receives the request, validates the data, persist the image in the object storage and then persists the entry in the database
-
----

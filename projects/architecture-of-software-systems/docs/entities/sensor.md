@@ -1,5 +1,3 @@
-
----
 ### Data sent from a IoT sensor
 
 ```java

@@ -1,5 +1,3 @@
-
----
 ### Filed problems
 
 ```java

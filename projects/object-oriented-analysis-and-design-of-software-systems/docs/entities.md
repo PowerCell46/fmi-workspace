@@ -182,6 +182,8 @@ class Company {
 
 	private String industry; // could be an enum as well
 
+	private StockExchange stockExchange;
+
 	// private String imageUrl;
 
 	// private String name;
@@ -191,6 +193,25 @@ class Company {
 	private BigInteger totalNumberOfShares;
 
 	private BigDecimal dividendYield;
+}
+```
+
+---
+## Stock Exchange
+
+```java
+class StockExchange {
+
+	private String ticker; // Not sure if they even exist, but even if they do, that's not the name: NASDAQ, XETRA ...
+
+	// private String name;
+
+	// private String description;
+
+	private Integer startWorkingHour; // for example 9 a.m.
+	// TODO: Зимно и Лятно часово време имат значение, при зимно се пушват 1 час: 10 a.m. and 18:30 p.m.
+	private Integer endWorkingHour; // for example 17:30 p.m.
+
 }
 ```
 

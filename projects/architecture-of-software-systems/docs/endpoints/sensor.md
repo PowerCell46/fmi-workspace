@@ -1,5 +1,3 @@
-
----
 ### Endpoint for initializing a new IoT sensor:
 When a new sensor is installed, in order for it to be initialized it has to make a request to this endpoint.
 

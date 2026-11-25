@@ -1,5 +1,3 @@
-
----
 ### Endpoint where an admin can alter the role of the users
 It's important to discuss here whether the relationship is ManytoOne between User and Role or Many to many
 

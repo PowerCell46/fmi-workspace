@@ -1,5 +1,3 @@
-
----
 ### AI assesment
 Wrap-ваме FiledProblem и му добавяме приоритет, резултат от Priorization assesment service-a.
 
