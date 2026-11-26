@@ -9,7 +9,7 @@ class User {
 
     private String password;
 
-	private Wallet wallet;
+	private Portfolio portfolio;
 }
 ```
 
@@ -73,7 +73,7 @@ class Portfolio {
 
     private UUID id;
 
-	private List<Transaction> transactions; // ! При транзакция, трябва да се инкрементира подходящия currentyAmount
+	private List<Transaction> transactions; // ! При транзакция, трябва да се инкрементира подходящия currencyAmount
 
 	private List<CurrencyAmount> currencyAmounts;
 
@@ -106,7 +106,7 @@ class Transaction { // заявка за закупуване/продаване
 
 	private Company company;
 
-	private BigDecimal amount;
+	private BigDecimal sharesAmount;
 
 	private Currency currency;
 
@@ -134,7 +134,7 @@ class Currency {
 
 	private int id;
 
-    private String displayName;
+    private String name;
 }
 ```
 
