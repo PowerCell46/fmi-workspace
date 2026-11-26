@@ -158,6 +158,8 @@ class CurrencyAmount {
 ```java
 class Dividend { // Occurrence of a dividend
 
+	private UUID id;
+
 	private Instant paidAt;
 
 	private Portfolio portfolio;
@@ -180,7 +182,7 @@ class Company {
 
 	private String ticker;
 
-	private String industry; // could be an enum as well
+	private Sector sector;
 
 	private StockExchange stockExchange;
 
@@ -190,9 +192,39 @@ class Company {
 
 	// private String description;
 
-	private BigInteger totalNumberOfShares;
+	private BigInteger totalNumberOfShares; // TODO: If it's an index then do we have this field? It should probably be an optional field; in that case the entity should probable be renamed?
 
 	private BigDecimal dividendYield;
+}
+```
+
+---
+## Sector
+
+```java
+enum Sector {
+
+	ENERGY,
+
+	MATERIALS,
+
+	INDUSTRIALS,
+
+	CONSUMER_DISCRETIONARY,
+
+	CONSUMER_STAPLES,
+
+	HEALTH_CARE,
+
+	FINANCIALS,
+
+	INFORMATION_TECHNOLOGY,
+
+	COMMUNICATION_SERVICES,
+
+	UTILITIES,
+
+	REAL_ESTATE
 }
 ```
 
@@ -211,7 +243,8 @@ class StockExchange {
 	private Integer startWorkingHour; // for example 9 a.m.
 	// TODO: Зимно и Лятно часово време имат значение, при зимно се пушват 1 час: 10 a.m. and 18:30 p.m.
 	private Integer endWorkingHour; // for example 17:30 p.m.
-
+	
+	// TODO: also holidays should be considered
 }
 ```
 
