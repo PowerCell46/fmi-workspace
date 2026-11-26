@@ -94,13 +94,14 @@ class Portfolio {
 
 ---
 ### Transaction
+Заявка за закупуване/продаване
 
 ```java
-class Transaction { // заявка за закупуване/продаване
+class Transaction {
 
 	private UUID id;
 
-	private Instant timestamp; // TODO: Should be renamed
+	private Instant executedAt;
 
 	private OperationType operationType;
 
@@ -234,7 +235,7 @@ enum Sector {
 ```java
 class StockExchange {
 
-	private String ticker; // Not sure if they even exist, but even if they do, that's not the name: NASDAQ, XETRA ...
+	private String marketIdentifierCode;
 
 	// private String name;
 
@@ -245,37 +246,5 @@ class StockExchange {
 	private Integer endWorkingHour; // for example 17:30 p.m.
 	
 	// TODO: also holidays should be considered
-}
-```
-
----
-## TranslationField
-
-```java
-class TranslationField {
-
-	private Language language;
-
-	private String tableName;
-
-	private String fieldName;
-
-	private String value;
-}
-
-// | EN | Company | name        | Meta                                                             |
-// | EN | Company | description | Meta Platforms, Inc., headquartered in Menlo Park, California... |
-// | BG | Company | name        | Meta                                                             |
-// | BG | Company | description | Meta Platforms, Inc., със седалище в Менло Парк, Калифорния...   |
-
-```
-
----
-## Language
-
-```java
-class Language {
-
-	private String name;
 }
 ```
