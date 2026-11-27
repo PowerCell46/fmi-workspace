@@ -179,7 +179,7 @@ class Dividend { // Occurrence of a dividend
 ## Company 
 
 ```java
-class Company {
+class Company { // TODO: rename to Instrument or Asset
 
 	private String ticker;
 
@@ -248,3 +248,5 @@ class StockExchange {
 	// TODO: also holidays should be considered
 }
 ```
+
+TODO: An entity in which we keep tickers that the system works with; active: boolean field; manages by the admin (кои тикери поддържа нашата система - трябва ни при web socket connection-а да ги подаваме)
