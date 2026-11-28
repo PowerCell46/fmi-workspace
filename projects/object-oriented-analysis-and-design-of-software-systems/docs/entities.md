@@ -5,6 +5,8 @@ class User {
 
     private UUID id;
 
+	// private String email; // TODO: Discuss whether we need it or not
+
 	private String username;
 
     private String password;

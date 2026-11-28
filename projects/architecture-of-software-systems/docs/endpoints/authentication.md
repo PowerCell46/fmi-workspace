@@ -43,3 +43,21 @@ no request body
 
 response format:
 either success or failure
+
+---
+### Endpoint for refreshing the access token
+Client makes a request, but the token is expired (401 unauthorized returned), so the browser makes a request to this endpoint to renew/refresh it.
+/auth/refresh
+
+POST request
+request format:
+```json
+{
+  "refreshToken": "eyJhbGciOiJIUzI1Ni..."
+}
+```
+
+The user service validates the refresh token
+
+response format:
+either success or failure

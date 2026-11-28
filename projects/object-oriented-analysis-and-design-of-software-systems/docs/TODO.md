@@ -3,5 +3,5 @@
 2. tranding stocks
 
 
-
+Redis Virtual Stock market implementation: 
 https://youtu.be/LaiQFZ5bXaM?si=JW5kEPiRGdWCMh5r
