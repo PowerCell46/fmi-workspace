@@ -13,3 +13,8 @@ TODO: write out the format of the response
 (probably paged 100-200 items per page)
 The user wants to see an aggregation of all of its dividends and history of them; when we scrolls down we should automatically load the next page/cursor
 
+
+---
+### Endpoint for aggregation of the user's dividends
+
+In order to displ
